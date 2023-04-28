@@ -1,0 +1,232 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>EarningNest-Services</title>
+    <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static '/css/prettyPhoto.css' %}" rel="stylesheet">
+    <link href="{% static '/css/animate.css' %}" rel="stylesheet">
+    <link href="{% static '/css/main.css' %}" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="{% static 'images/ico/favicon.ico' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'images/ico/apple-touch-icon-144-precomposed.png'%}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'images/ico/apple-touch-icon-114-precomposed.png'%}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'images/ico/apple-touch-icon-72-precomposed.png'%}">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'images/ico/apple-touch-icon-57-precomposed.png'%}">
+</head><!--/head-->
+<body>
+    <header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner" style="background-color:forestgreen;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <p class="navbar-brand" href="{% url 'home' %}"><b>EARNING NEST</b></p>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'home' %}" style="color:white">Home</a></li>
+                    <li><a href="/about" style="color:white">About Us</a></li>
+                    <li class="active"><a href="/services" style="color:white">Services</a></li>
+                    <li><a href="/profit_chart" style="color:white">Profit Chart</a></li>
+                    <li><a href="/faqs" style="color:white">FAQs</a></li>
+                    <li><a href="/contact_us" style="color:white">Contact</a></li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="/dashboard" style="color:white">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/sign_in" style="color:white">Log Out</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="/sign_in" style="color:white">SignIn</a>
+                    </li>
+                    <li>
+                        <a href="/registration" style="color:white">SignUp</a>
+                    </li>
+                    <li>
+                        {% endif %}
+                </ul>
+            </div>
+        </div>
+    </header><!--/header-->
+
+    <section id="tos" class="contact section-bg">
+        <div class="container aos-init aos-animate" data-aos="fade-up">
+
+            <div class="container">
+
+                <div class="section-title mt-5 aos-init aos-animate" data-aos="zoom-out">
+                    <h2>Policy</h2>
+                    <h3>Terms and Conditions</h3>
+                </div>
+
+                <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-1 content aos-init aos-animate" data-aos="fade-right">
+                    <p class="font-italic">
+                        You must read, agree with and accept all of the policies and terms below to join EarningNest by
+                        creating an account you accept and Acknowledge the following rules. EarningNest may modify or terminate
+                        the following rules of user at any time for any reason.
+                    </p>
+                    <p>
+                        We periodically update our terms to ensure their consistency with our policies and allow for
+                        addition of new features and continued improvement of our advertisement and publishing products
+                        as effective and useful as possible
+                    </p>
+                    <h2>Official Words</h2>
+                    <ul style="list-style: none;">
+                        <li><i class="icofont-minus"></i><b>Company, Platform</b> –&nbsp;EarningNest&nbsp;&nbsp;</li>
+                        <li><i class="icofont-minus"></i><b>User, investor</b>&nbsp;- Internet user on the&nbsp;website&nbsp;</li>
+                        <li>
+                            <i class="icofont-minus"></i><b>Website</b>&nbsp;- is the internet resource, containing the
+                            totality of contained information and intellectual property&nbsp;
+                        </li>
+                        <li>
+                            <i class="icofont-minus"></i><b>An account&nbsp;</b>- is registration data, unique login
+                            (address of e-mail) and password, created independently by the User in the process of
+                            Registration on the Website.&nbsp;
+                        </li>
+                        <li><i class="icofont-minus"></i><b>Profit chart</b>&nbsp;- monthly profit calendar&nbsp;</li>
+
+
+                    </ul>
+                    <h3>Terms and Conditions</h3>
+                    <ul style="list-style: none;">
+                        <li>
+                            <i class="icofont-check-circled"></i>Interaction between Service and Users is&nbsp;effected&nbsp;via
+                            EarningNest site platform — an online resource located at&nbsp;www.asearningsite.pk
+                        </li>
+                        <li>
+                            <i class="icofont-check-circled"></i>To use services provided by the Platform, each User
+                            must be registered on the Platform website and logged in.&nbsp;
+                        </li>
+                        <li>
+                            <i class="icofont-check-circled"></i>A decision of registration on the website is made
+                            exclusively by the User.&nbsp;
+                        </li>
+                        <li>
+                            <i class="icofont-check-circled"></i>By being registered on theEarningNest site platform
+                            website users accept terms of Service which are stipulated in this Agreement, and they are
+                            obliged to comply with the rules of operation on Platform.&nbsp;
+                        </li>
+                        <li>
+                            <i class="icofont-check-circled"></i>The User should realize that all photo-, video- and
+                            text information at the EarningNest site platform website is a subject of copyright matter;
+                            it is provided exclusively for introductory and recommendation purposes.&nbsp;
+                        </li>
+                        <li>
+                            <i class="icofont-check-circled"></i>The User bears responsibility for using information
+                            received on the EarningNest site platform.&nbsp;
+                        </li>
+                        <li>
+                            <i class="icofont-check-circled"></i>Investor will get 80% of profit which we will earn in
+                            the month, according to profit chart&nbsp;
+                        </li>
+                        <li>
+                            <i class="icofont-check-circled"></i>User will get 6% bonus of each amount which is invested
+                            in his referral line.&nbsp;
+                        </li>
+                        <li>
+                            <i class="icofont-check-circled"></i>Every user can contact us by support options
+                            in&nbsp;account&nbsp;or visit our office at office timings.&nbsp;
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bottom" class="wet-asphalt" style="background-color:forestgreen;color:white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <h4>About Us</h4>
+                    <p>EarningNest site is a recognized company from which user can earn profit on his/her investments. We deliver monthly profit according to profit charts. EarningNest site is the project of EarningNest of companies and our company deals in several businesses like real estate, constructions, currencies, crypto currencies etc. Join us today and be the part of future.</p>
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <h4>Company</h4>
+                    <div>
+                        <ul class="arrow" style="color:white">
+                            <li><a href="/sign_in" style="color:white">Sign In</a></li>
+                            <li><a href="/registraion" style="color:white">Sign Up</a></li>
+                            <li><a href="/about" style="color:white">About Us</a></li>
+                            <li><a href="/contact_us" style="color:white">Contact Us</a></li>
+                            <li><a href="/services" style="color:white">Services </a></li>
+                        </ul>
+                    </div>
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <h4>Contact Us</h4>
+                    <div>
+                        <div class="media">
+                            <div class="media-body">
+                                <span class="media-heading"><a href="#" style="color:white"><b>Phone : 03105037468</b></a></span>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-body">
+                                <span class="media-heading"><a href="#" style="color:white"><b>Email : chrizwanarain6@gmail.com</b></a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <h4>Address</h4>
+                    <address>
+                        <strong>Twitter, Inc.</strong><br>
+                        795 Folsom Ave, Suite 600<br>
+                        San Francisco, CA 94107<br>
+                    </address>
+                    <h4>Send Message</h4>
+                    <form role="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" autocomplete="off" placeholder="Enter your email">
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger" type="button">Go!</button>
+                            </span>
+                        </div>
+                    </form>
+                </div> <!--/.col-md-3-->
+            </div>
+        </div>
+    </section><!--/#bottom-->
+
+    <footer id="footer" style="background-color:forestgreen;color:white">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2023 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates" style="color:white"><b>Earning Nest</b></a>. All Rights Reserved.(Developed By <b>Rizwan Hussain</b>)
+                </div>
+            <div class="col-sm-6">
+                <ul class="pull-right">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/faqs">Faq</a></li>
+                    <li><a href="/contact_us">Contact Us</a></li>
+                    <li><a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a></li><!--#gototop-->
+                </ul>
+            </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

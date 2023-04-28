@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>SignUp | EarningNest</title>
+    <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static '/css/prettyPhoto.css' %}" rel="stylesheet">
+    <link href="{% static '/css/animate.css' %}" rel="stylesheet">
+    <link href="{% static '/css/main.css' %}" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="{% static 'images/ico/favicon.ico' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'images/ico/apple-touch-icon-144-precomposed.png'%}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'images/ico/apple-touch-icon-114-precomposed.png'%}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'images/ico/apple-touch-icon-72-precomposed.png'%}">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'images/ico/apple-touch-icon-57-precomposed.png'%}">
+</head><!--/head-->
+<body>
+    <header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner" style="background-color:forestgreen;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <p class="navbar-brand" href="/home"><b>EARNING NEST</b></p>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'home' %}" style="color:white">Home</a></li>
+                    <li><a href="/about" style="color:white">About Us</a></li>
+                    <li><a href="/services" style="color:white">Services</a></li>
+                    <li><a href="/profit_chart" style="color:white">Profit Chart</a></li>
+                    <li><a href="/faqs" style="color:white">FAQs</a></li>
+                    <li><a href="/contact_us" style="color:white">Contact</a></li>
+                    <li>
+                        <a href="/sign_in" style="color:white">SignIn</a>
+                    </li>
+                    <li  class="active">
+                        <a href="/registration" style="color:white">SignUp</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header><!--/header-->
+
+   
+
+    <section id="register" class="container">
+        <form action="/register/" method="POST" class="center" role="form">
+            
+            <fieldset class="registration-form">
+                {% csrf_token %}
+                <div class="form-group">
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Username" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="E-mail" class="form-control" required>
+                    {% if email_error %}
+                    <span class="text-danger">{{ email_error }}</span>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Password" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="password_confirm">Confirm Password:</label>
+                    <input type="password" id="password_confirm" name="password_confirm" placeholder="Password (Confirm)" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="cnic">CNIC:</label>
+                    <input type="text" id="cnic" name="cnic" placeholder="XXXXX-XXXXXXX-X" class="form-control" pattern="[0-9]{5}-[0-9]{7}-[0-9]{1}" title="Please enter a valid CNIC number in the format XXXXX-XXXXXXX-X" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" class="form-control" pattern="[0-9]{11}" title="Please enter a valid 11-digit phone number" required>
+                    {% if form.errors.contactnumber %}
+                        <p class="error-message">{{ form.errors.contactnumber }}</p>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="nextofkinname">Next of Kin Name:</label>
+                    <input type="text" id="nextofkinname" name="nextofkinname" placeholder="Next of Kin Name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="nextofkinphone">Next of Kin Phone:</label>
+                    <input type="tel" id="nextofkinphone" name="nextofkinphone" placeholder="Next of Kin Phone Number" class="form-control" pattern="[0-9]{11}" title="Please enter a valid 11-digit phone number" required>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success btn-md btn-block" type="submit">Register</button>
+                </div>
+            </fieldset>
+        </form>
+    </section><!--/#registration-->
+    
+
+    <section id="bottom" class="wet-asphalt" style="background-color:forestgreen;color:white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <h4>About Us</h4>
+                    <p>EarningNest site is a recognized company from which user can earn profit on his/her investments. We deliver monthly profit according to profit charts. EarningNest site is the project of EarningNest of companies and our company deals in several businesses like real estate, constructions, currencies, crypto currencies etc. Join us today and be the part of future.</p>
+                </div><!--/.col-md-3-->
+
+            <div class="col-md-3 col-sm-6">
+                <h4>Company</h4>
+                <div>
+                    <ul class="arrow" style="color:white">
+                        <li><a href="/sign_in" style="color:white">Sign In</a></li>
+                        <li><a href="/registraion" style="color:white">Sign Up</a></li>
+                        <li><a href="/about" style="color:white">About Us</a></li>
+                        <li><a href="/contact_us" style="color:white">Contact Us</a></li>
+                        <li><a href="/services" style="color:white">Services </a></li>
+                    </ul>
+                </div>
+            </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <h4>Contact Us</h4>
+                    <div>
+                        <div class="media">
+                            <div class="media-body">
+                                <span class="media-heading"><a href="#" style="color:white"><b>Phone : 03105037468</b></a></span>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-body">
+                                <span class="media-heading"><a href="#" style="color:white"><b>Email : chrizwanarain6@gmail.com</b></a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <h4>Address</h4>
+                    <address>
+                        <strong>Twitter, Inc.</strong><br>
+                        795 Folsom Ave, Suite 600<br>
+                        San Francisco, CA 94107<br>
+                    </address>
+                    <h4>Send Message</h4>
+                    <form role="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" autocomplete="off" placeholder="Enter your email">
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger" type="button">Go!</button>
+                            </span>
+                        </div>
+                    </form>
+                </div> <!--/.col-md-3-->
+            </div>
+        </div>
+    </section><!--/#bottom-->
+
+    <footer id="footer" style="background-color:forestgreen;color:white">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2023 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates" style="color:white"><b>Earning Nest</b></a>. All Rights Reserved.(Developed By <b>Rizwan Hussain</b>)
+                </div>
+            <div class="col-sm-6">
+                <ul class="pull-right">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/faqs">Faq</a></li>
+                    <li><a href="/contact_us">Contact Us</a></li>
+                    <li><a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a></li><!--#gototop-->
+                </ul>
+            </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

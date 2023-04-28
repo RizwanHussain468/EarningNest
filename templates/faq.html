@@ -1,0 +1,223 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>FAQ | Flat Theme</title>
+    <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static '/css/prettyPhoto.css' %}" rel="stylesheet">
+    <link href="{% static '/css/animate.css' %}" rel="stylesheet">
+    <link href="{% static '/css/main.css' %}" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="{% static 'images/ico/favicon.ico' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'images/ico/apple-touch-icon-144-precomposed.png'%}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'images/ico/apple-touch-icon-114-precomposed.png'%}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'images/ico/apple-touch-icon-72-precomposed.png'%}">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'images/ico/apple-touch-icon-57-precomposed.png'%}">
+</head><!--/head-->
+<body>
+    <header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner" style="background-color:forestgreen;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <p class="navbar-brand" href="index.html"><b>EARNING NEST</b></p>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'home' %}" style="color:white">Home</a></li>
+                    <li><a href="/about" style="color:white">About Us</a></li>
+                    <li><a href="/services" style="color:white">Services</a></li>
+                    <li><a href="/profit_chart" style="color:white">Profit Chart</a></li>
+                    <li class="active"><a href="/faqs" style="color:white">FAQs</a></li>
+                    <li><a href="/contact_us" style="color:white">Contact</a></li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="/dashboard" style="color:white">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/sign_in" style="color:white">Log Out</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="/sign_in" style="color:white">SignIn</a>
+                    </li>
+                    <li>
+                        <a href="/registration" style="color:white">SignUp</a>
+                    </li>
+                    <li>
+                        {% endif %}
+                </ul>
+            </div>
+        </div>
+    </header><!--/header-->
+
+
+    <section id="faqs" class="container">
+        <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+
+        </div>
+
+        <ul class="faq unstyled">
+            <li>
+                <span class="number" style="background-color:forestgreen">01</span>
+                <div>
+                    <h3>
+                        آپنی کپمنی کا تعارف کروا
+                        دیں۔
+                    </h3>
+                    <h4>
+                        ہماری کپمنی EarningNest group of companies ایک باقاعدہ پلیٹ فارم ہے جس کے ذریعےآپ ماہانہ باقاعدگی سے
+                        منافع کما سکتے ہیں وہ بھی بالکل حلال۔
+                    </h4>
+                </div>
+            </li>
+            <li>
+                <span class="number" style="background-color:forestgreen">02</span>
+                <div>
+                    <h3>
+                        یہ پرافٹ ماہانہ وار کس ترتیب سے دیا جاتا ہے؟
+                    </h3>
+                    <h4>
+                        پرافٹ دینے کی ترتیب یوں ہے کہ ہم نے کسٹمر کا پیسہ مختلف جگہوں پر لگایا ہوا ہے۔ جس سے ہمیں جو
+                        بھی منافع ہو اس کی باقاعدہ شرعی تقسیم کی جاتی ہے۔
+                    </h4>
+                </div>
+            </li>
+            <li>
+                <span class="number" style="background-color:forestgreen">03</span>
+                <div>
+                    <h3>
+                        ہمیں یہ معلوم نہیں ہوتا
+                        کہ پیسہ کس جگہ پر لگایا ہے تو کیا یہ جائز ہوگا؟
+                    </h3>
+                    <h4>
+                        جی بالکل مضاربت کی ایک قسم یہ بھی ہے کہ آپ مجھے اختیار دے دیتے ہیں کہ میں جہاں بھی مناسب
+                        موقع دیکھوں آپکی رقم لگاوں تو یہ مکمل اختیار دینے سے میں جہاں سے بھی چاہوں آپکو منافع دے
+                        سکتا ہوں اگر جگہ حلال ہوتو۔
+                    </h4>
+                </div>
+            </li>
+            <li>
+                <span class="number" style="background-color:forestgreen">04 </span>
+                <div>
+                    <h3>
+                        آپ یہ رقم کن جگہوں پر
+                        خرچ کرتے ہیں۔
+                    </h3>
+                    <h4>
+                        پراپرٹی، کرنسی، کرپٹو کرنسی، کار رینٹل زون ، فیکٹریز اور کمپنیز میں انوسٹ کرکے۔
+                    </h4>
+                </div>
+            </li>
+            <li>
+                <span class="number" style="background-color:forestgreen">05</span>
+                <div>
+                    <h3>
+                        یہ شرعی تقسیم کس لحاظ سے
+                        کی جاتی ہے؟ 
+                    </h3>
+                    <h4>
+                        ہمیں جتنا بھی منافع ہوتا ہے ہم اس کا 80 اور 20 کا دھیان رکھتے ہوئے تقسیم کرتے ہیں 80 فیصد
+                        کسٹمر کو اور 20 فیصد کپمنی رکھتی ہے ۔
+                    </h4>
+                </div>
+            </li>
+        </ul>
+    </section><!--#faqs-->
+
+    <section id="bottom" class="wet-asphalt" style="background-color:forestgreen;color:white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <h4>About Us</h4>
+                    <p>EarningNest site is a recognized company from which user can earn profit on his/her investments. We deliver monthly profit according to profit charts. EarningNest site is the project of EarningNest of companies and our company deals in several businesses like real estate, constructions, currencies, crypto currencies etc. Join us today and be the part of future.</p>
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <h4>Company</h4>
+                    <div>
+                        <ul class="arrow" style="color:white">
+                            <li><a href="/sign_in" style="color:white">Sign In</a></li>
+                            <li><a href="/registraion" style="color:white">Sign Up</a></li>
+                            <li><a href="/about" style="color:white">About Us</a></li>
+                            <li><a href="/contact_us" style="color:white">Contact Us</a></li>
+                            <li><a href="/services" style="color:white">Services </a></li>
+                        </ul>
+                    </div>
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <h4>Contact Us</h4>
+                    <div>
+                        <div class="media">
+                            <div class="media-body">
+                                <span class="media-heading"><a href="#" style="color:white"><b>Phone : 03105037468</b></a></span>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-body">
+                                <span class="media-heading"><a href="#" style="color:white"><b>Email : chrizwanarain6@gmail.com</b></a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <h4>Address</h4>
+                    <address>
+                        <strong>Twitter, Inc.</strong><br>
+                        795 Folsom Ave, Suite 600<br>
+                        San Francisco, CA 94107<br>
+                    </address>
+                    <h4>Send Message</h4>
+                    <form role="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" autocomplete="off" placeholder="Enter your email">
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger" type="button">Go!</button>
+                            </span>
+                        </div>
+                    </form>
+                </div> <!--/.col-md-3-->
+            </div>
+        </div>
+    </section><!--/#bottom-->
+
+    <footer id="footer" style="background-color:forestgreen;color:white">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2023 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates" style="color:white"><b>Earning Nest</b></a>. All Rights Reserved.(Developed By <b>Rizwan Hussain</b>)
+                </div>
+            <div class="col-sm-6">
+                <ul class="pull-right">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/faqs">Faq</a></li>
+                    <li><a href="/contact_us">Contact Us</a></li>
+                    <li><a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a></li><!--#gototop-->
+                </ul>
+            </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
