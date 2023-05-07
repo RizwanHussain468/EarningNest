@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>EarningNest</title>
+    <title>Earning Nest</title>
     <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static '/css/font-awesome.min.css' %}" rel="stylesheet">
     <link href="{% static '/css/prettyPhoto.css' %}" rel="stylesheet">
@@ -26,7 +26,7 @@
     <header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner" style="background-color:forestgreen;">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" >
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -34,7 +34,7 @@
                 </button>
                 <p class="navbar-brand" href="{% url 'home' %}"><b>EARNING NEST</b></p>
             </div>
-            <div class="collapse navbar-collapse">
+            <div class="collapse navbar-collapse" id=".navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="{% url 'home' %}" style="color:white">Home</a></li>
                     <li><a href="/about" style="color:white">About Us</a></li>
@@ -47,7 +47,7 @@
                         <a href="/dashboard" style="color:white">Dashboard</a>
                     </li>
                     <li>
-                        <a href="/sign_in" style="color:white">Log Out</a>
+                        <a href="/home" style="color:white">Log Out</a>
                     </li>
                     {% else %}
                     <li>
@@ -56,6 +56,12 @@
                     <li>
                         <a href="/registration" style="color:white">SignUp</a>
                     </li>
+                    <li class="active"><a href="{% url 'home' %}" style="color:white">Home</a></li>
+                    <li><a href="/about" style="color:white">About Us</a></li>
+                    <li><a href="/services" style="color:white">Services</a></li>
+                    <li><a href="/profit_chart" style="color:white">Profit Chart</a></li>
+                    <li><a href="/faqs" style="color:white">FAQs</a></li>
+                    <li><a href="/contact_us" style="color:white">Contact</a></li>
                     
                     {% endif %}
                 </ul>
@@ -66,8 +72,6 @@
         <div class="carousel slide wet-asphalt">
             <ol class="carousel-indicators">
                 <li data-target="#main-slider" data-slide-to="0" class="active"></li>
-                <li data-target="#main-slider" data-slide-to="1"></li>
-                <li data-target="#main-slider" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="item active" style=" background-image:  url('{% static '/fonts/images/slider/bg6.jpg' %}');">
@@ -75,13 +79,9 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="carousel-content centered">
-                                    <h1 class="animation animated-item-1" style="color:white"><b>EarningNest</b></h1>
-                                    <h4 class="animation animated-item-2" style="color:white"><b>EarningNest site is a recognized company from which user can earn profit</b></h4>
-                                    <h4 class="animation animated-item-2" style="color:white"><b>on his/her investments. We deliver monthly profit according to profit charts</b></h4>
-                                    <h4 class="animation animated-item-2" style="color:white"><b>EarningNest site is the project of EarnNest of companies and our company </b></h4>
-                                    <h4 class="animation animated-item-2" style="color:white"><b>deals in several businesses like real estate, constructions, currencies,</b> </h4>
-                                    <h4 class="animation animated-item-2" style="color:white"><b>crypto currencies etc. Join us today and be the part of future.</b> </h4>
-                                    <div><h3 onclick="window.location.href= '/registration'" class="btn"><b>Get Started</b></h3>
+                                    <h1 class="animation animated-item-1" style="color:white"><b>Earning Nest</b></h1>
+                                    <p class="animation animated-item-2" style="color:white"><b>Earning Nest site is a recognized company from which user can earn profit on his/her investments. We deliver monthly profit according to profit charts We deals in several businesses like real estate, constructions, currencies,crypto currencies & Ecommerce. Join us today and be the part of the future.</b></p>
+                                    <div><h3 onclick="window.location.href= '/sign_in'" class="btn"><b>Sign In</b></h3>
                                     </div>
                                   
                                 </div>
@@ -89,59 +89,9 @@
                         </div>
                     </div>
                 </div><!--/.item-->
-                <div class="item" style="background-image:  url('{% static '/images/slider/bg1.jpg' %}');">
-                    <div class="container">
-                        <div class="row">
-                        </div>
-                    </div>
-                </div><!--/.item-->
-                <div class="item" style="background-image: url('{% static '/images/slider/bg1.jpg' %}');">
-                </div><!--/.item-->
             </div><!--/.carousel-inner-->
         </div>
-        <!--/ <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
-            <i class="icon-angle-left"></i>
-        </a>
-        <a class="next hidden-xs" href="#main-slider" data-slide="next">
-            <i class="icon-angle-right"></i>
-        </a>-->
     </section><!--/-->
-    <!--/<section id="services" class="emerald" >
-        <div class="container" >
-            <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <div class="media">
-                        <div class="pull-left">
-                            <i class="icon-twitter icon-md"></i>
-                        </div>
-                        <div class="media-body">
-                            <h3 class="media-heading">Twitter Marketing</h3>
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
-                        </div>
-                    </div>
-                </div>-->
-    <!--/ <div class="col-md-4 col-sm-6">
-        <div class="media">
-            <div class="pull-left">
-                <i class="icon-facebook icon-md"></i>
-            </div>
-            <div class="media-body">
-                <h3 class="media-heading">Facebook Marketing</h3>
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
-            </div>
-        </div>
-    </div>-->
-    <!--/ <div class="col-md-4 col-sm-6">
-        <div class="media">
-            <div class="pull-left">
-                <i class="icon-google-plus icon-md"></i>
-            </div>
-            <div class="media-body">
-                <h3 class="media-heading">Google Plus Marketing</h3>
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
-            </div>
-        </div>
-    </div>-->
     </div>
     </div>
     </section><!--/-->
@@ -151,7 +101,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <h3>We Serve</h3>
-                    <p>EarnNest site is a recognized company from which user can earn profit on his/her investments. We deliver monthly profit according to profit charts. EarnNest site is the project of EarnNest of companies and our company deals in several businesses like real estate, constructions, currencies, crypto currencies etc. Join us today and be the part of future.</p>
+                    <p>Earning Nest site is a recognized company from which user can earn profit on his/her investments. We deliver monthly profit according to profit charts. Earning Nest site is the project of Earning Nest of companies and our company deals in several businesses like real estate, constructions, currencies, crypto currencies etc. Join us today and be the part of future.</p>
                     <p class="gap"></p>
                 </div>
                 <div class="col-md-9">
@@ -159,21 +109,14 @@
                         <div class="carousel-inner">
                             <div class="item active">
                                 <div class="row">
-                                    <div class="col-xs-4" style="width:500px;height:200px" >
+                                    <div class="col-xs-4" style="width:600px;height:400px" >
                                         <div class="portfolio-item">
                                             <div class="item-inner">
-                                                <img class="img-responsive" src="{% static '/fonts/images/slider/bg5.jpg' %}" alt="" style="width:900px;height:200px" >
+                                                <img class="img-responsive" src="{% static '/fonts/images/slider/bg5.jpg' %}" alt="" style="width:800px;height:400px" >
                                                 <h5>
                                                     Earn With Us
                                                 </h5>
                                                </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-4" >
-                                        <div class="portfolio-item">
-                                            <div class="item-inner">
-                                                <img class="img-responsive" src="{% static '/images/logoicon.png' %}" alt="" style="width:900px;height:235px">
-                                            </div>
                                         </div>
                                     </div>
                                 </div><!--/.row-->
@@ -191,44 +134,75 @@
                 <div class="col-lg-12">
                     <div class="center">
                         <h2>What our clients say</h2>
-                        <p>EarnNest is the best site to earn money and invest your money for good income.</p>
+                        <p>Earning Nest is the best site to earn money and invest your money for good income.</p>
                     </div>
                     <div class="gap"></div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <blockquote>
-                                <p>Explain your company?</p>
-                                <p>Our company EarnNest is a platform from which you can earn monthly income 100% Halal. </p>
-                            </blockquote>
-                            <blockquote>
-                                <p>How the monthly income willbe givened?</p>
-                                <p>We invested the money and all the profit is divided equally to the investers.</p>
-                            </blockquote>
-                        </div>
-                        <div class="col-md-6">
-                            <blockquote>
-                                <p>
-                                    یہ شرعی تقسیم کس لحاظ سے
-                                    کی جاتی ہے؟
-                                </p>
-                                <p>
+                    <ul class="faq unstyled">
+                        <li>
+                            <span class="number" style="background-color:forestgreen">01</span>
+                            <div>
+                                <h3>
+                                    آپنی کپمنی کا تعارف کروا
+                                    دیں۔
+                                </h3>
+                                <h4>
+                                    ہماری کپمنی Earning Nest Site ایک باقاعدہ پلیٹ فارم ہے جس کے ذریعےآپ ماہانہ باقاعدگی سے
+                                    منافع کما سکتے ہیں وہ بھی بالکل حلال۔
+                                </h4>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="number" style="background-color:forestgreen">02</span>
+                            <div>
+                                <h3>
+                                    یہ پرافٹ ماہانہ وار کس ترتیب سے دیا جاتا ہے؟
+                                </h3>
+                                <h4>
                                     پرافٹ دینے کی ترتیب یوں ہے کہ ہم نے کسٹمر کا پیسہ مختلف جگہوں پر لگایا ہوا ہے۔ جس سے ہمیں جو
                                     بھی منافع ہو اس کی باقاعدہ شرعی تقسیم کی جاتی ہے۔
-                                </p>
-                            </blockquote>
-                            <blockquote>
-                                <p>
+                                </h4>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="number" style="background-color:forestgreen">03</span>
+                            <div>
+                                <h3>
                                     ہمیں یہ معلوم نہیں ہوتا
                                     کہ پیسہ کس جگہ پر لگایا ہے تو کیا یہ جائز ہوگا؟
-                                </p>
-                                <p>
+                                </h3>
+                                <h4>
                                     جی بالکل مضاربت کی ایک قسم یہ بھی ہے کہ آپ مجھے اختیار دے دیتے ہیں کہ میں جہاں بھی مناسب
                                     موقع دیکھوں آپکی رقم لگاوں تو یہ مکمل اختیار دینے سے میں جہاں سے بھی چاہوں آپکو منافع دے
                                     سکتا ہوں اگر جگہ حلال ہوتو۔
-                                </p>
-                            </blockquote>
-                        </div>
-                    </div>
+                                </h4>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="number" style="background-color:forestgreen">04 </span>
+                            <div>
+                                <h3>
+                                    آپ یہ رقم کن جگہوں پر
+                                    خرچ کرتے ہیں۔
+                                </h3>
+                                <h4>
+                                    پراپرٹی، کرنسی، کرپٹو کرنسی، کار رینٹل زون ، فیکٹریز اور کمپنیز میں انوسٹ کرکے۔
+                                </h4>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="number" style="background-color:forestgreen">05</span>
+                            <div>
+                                <h3>
+                                    یہ شرعی تقسیم کس لحاظ سے
+                                    کی جاتی ہے؟
+                                </h3>
+                                <h4>
+                                    ہمیں جتنا بھی منافع ہوتا ہے ہم اس کا 90 اور 10 کا دھیان رکھتے ہوئے تقسیم کرتے ہیں 90 فیصد
+                                    کسٹمر کو اور 10 فیصد کپمنی رکھتی ہے ۔
+                                </h4>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -239,7 +213,7 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <h4>About Us</h4>
-                    <p>EarningNest site is a recognized company from which user can earn profit on his/her investments. We deliver monthly profit according to profit charts. EarningNest site is the project of EarningNest of companies and our company deals in several businesses like real estate, constructions, currencies, crypto currencies etc. Join us today and be the part of future.</p>
+                    <p>Earning Nest site is a recognized company from which user can earn profit on his/her investments. We deliver monthly profit according to profit charts. Our company deals in several businesses like real estate, constructions, currencies, crypto currencies & Ecommerce. Join us today and be the part of the future.</p>
                 </div><!--/.col-md-3-->
 
                 <div class="col-md-3 col-sm-6">
@@ -265,7 +239,7 @@
                         </div>
                         <div class="media">
                            <div class="media-body">
-                                <span class="media-heading"><a href="#" style="color:white"><b>Email : chrizwanarain6@gmail.com</b></a></span>
+                                <span class="media-heading"><a href="#" style="color:white"><b>Email : nausherwan8@gmail.com</b></a></span>
                             </div>
                         </div>
                     </div>
@@ -279,7 +253,7 @@
                         San Francisco, CA 94107<br>
                     </address>
                     <h4>Send Message</h4>
-                    <form role="form" action="mailto:chrizwanarain6@gmail.com" method="post" enctype="text/plain">
+                    <form role="form" action="mailto:nausherwan8@gmail.com" method="post" enctype="text/plain">
                         <div class="input-group">
                             <input type="text" class="form-control" autocomplete="off" placeholder="Enter your email">
                             <span class="input-group-btn">
@@ -310,10 +284,12 @@
             </div>
         </div>
     </footer><!--/#footer-->
-
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"crossorigin="anonymous"></script>
+    <script src="{% static 'js/jquery.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/jquery.prettyPhoto.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
 </body>
 </html>
