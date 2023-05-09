@@ -30,22 +30,18 @@ def dashboard(request):
         context = {'user': request.user, 'refferal': request.user.get_uidb64()}
         return render(request,'userdashboard.html', context)
 
-@login_required(login_url='login')
 def about(request):
     context = {'user': request.user}
     return render(request,'about-us.html', context)
 
-@login_required(login_url='login')
 def services(request):
     context = {'user': request.user}
     return render(request,'services.html', context)
 
-@login_required(login_url='login')
 def profit_chart(request):
     context = {'user': request.user}
     return render(request,'portfolio.html', context)
 
-@login_required(login_url='login')
 def faqs(request):
     context = {'user': request.user}
     return render(request,'faq.html', context)

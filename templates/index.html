@@ -47,7 +47,7 @@
                         <a href="/dashboard" style="color:white">Dashboard</a>
                     </li>
                     <li>
-                        <a href="/home" style="color:white">Log Out</a>
+                        <a href="/logout" style="color:white">Log Out</a>
                     </li>
                     {% else %}
                     <li>
@@ -56,12 +56,6 @@
                     <li>
                         <a href="/registration" style="color:white">SignUp</a>
                     </li>
-                    <li class="active"><a href="{% url 'home' %}" style="color:white">Home</a></li>
-                    <li><a href="/about" style="color:white">About Us</a></li>
-                    <li><a href="/services" style="color:white">Services</a></li>
-                    <li><a href="/profit_chart" style="color:white">Profit Chart</a></li>
-                    <li><a href="/faqs" style="color:white">FAQs</a></li>
-                    <li><a href="/contact_us" style="color:white">Contact</a></li>
                     
                     {% endif %}
                 </ul>
@@ -81,9 +75,14 @@
                                 <div class="carousel-content centered">
                                     <h1 class="animation animated-item-1" style="color:white"><b>Earning Nest</b></h1>
                                     <p class="animation animated-item-2" style="color:white"><b>Earning Nest site is a recognized company from which user can earn profit on his/her investments. We deliver monthly profit according to profit charts We deals in several businesses like real estate, constructions, currencies,crypto currencies & Ecommerce. Join us today and be the part of the future.</b></p>
-                                    <div><h3 onclick="window.location.href= '/sign_in'" class="btn"><b>Sign In</b></h3>
+                                    {% if user.is_authenticated %}
+                                    <div><h3 onclick="window.location.href= '/dashboard'" class="btn"><b>Dashboard</b></h3>
                                     </div>
-                                  
+                                    {% else %}
+                                    <div>
+                                        <h3 onclick="window.location.href= '/sign_in'" class="btn"><b>Sign In</b></h3>
+                                    </div>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
